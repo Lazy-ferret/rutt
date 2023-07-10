@@ -3,6 +3,7 @@ import { ContentWrapper } from "./Content.styles";
 import ActionBar from "./ActionBar/ActionBar";
 import TestSuiteCreationForm from "./TestSuites/TestSuiteCreationForm/TestSuiteCreationForm";
 import { ContentItemStateType } from "../../types/types";
+import TestSuiteCard from "./TestSuites/TestSuiteCreationForm/TestSuiteCard/TestSuiteCard";
 
 type ContentPropsType = {
     type: 'main' | 'requirements' | 'cases' | 'tests'
@@ -15,6 +16,32 @@ const Content: React.FC<ContentPropsType> = (props) => {
         const isActivatedValue = state.some((element: { isActive: boolean }) => element.isActive === true)
         setActivated(isActivatedValue)
     }
+
+    const testSuites = [{
+        id: 't345',
+        title: 'Login page',
+        description: 'Lorem ipsum dolor sit amet',
+        count: 15,
+        date: '11/11/2011 13:13:13',
+        checked: false
+    },
+    {
+        id: 't346',
+        title: 'Login page',
+        description: 'Lorem ipsum dolor sit amet',
+        count: 15,
+        date: '11/11/2011 13:13:13',
+        checked: false
+    },
+    {
+        id: 't346',
+        title: 'Login page',
+        description: 'Lorem ipsum dolor sit amet',
+        count: 15,
+        date: '11/11/2011 13:13:13',
+        checked: false
+    },
+    ]
 
     return <ContentWrapper>
         {props.type === 'main' &&
@@ -30,8 +57,7 @@ const Content: React.FC<ContentPropsType> = (props) => {
             <div>USE CASES</div>
         }
         {props.type === 'tests' &&
-            <div>TEST SUITES</div>
-        }
+            testSuites.map(item => <TestSuiteCard {...item} />)}
     </ContentWrapper>
 }
 

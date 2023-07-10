@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from './themes/themes';
 import GlobalStyle from './components/common/GlobalStyle/GlobalStyle';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import TestSuiteCard from './components/Content/TestSuites/TestSuiteCreationForm/TestSuiteCard/TestSuiteCard';
 
 function App() {
 
